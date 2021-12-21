@@ -55,5 +55,10 @@
         tools:layout="@layout/fragment_set_inquire"
         android:name="com.pss.djmw_android.view.main.profile.SetInquireFragment"
         android:label="SetInquireFragment" />
+    <fragment
+        android:id="@+id/adminFragment"
+        android:name="com.pss.djmw_android.view.main.AdminFragment"
+        tools:layout="@layout/fragment_admin"
+        android:label="AdminFragment" />
 
 </navigation>

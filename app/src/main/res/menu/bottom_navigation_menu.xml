@@ -16,4 +16,8 @@
         android:id="@+id/profileFragment"
         android:title="프로필"
         android:icon="@drawable/bottom_icon_profile"/>
+    <item
+        android:id="@+id/adminFragment"
+        android:title="관리자"
+        android:icon="@drawable/bottom_icon_key"/>
 </menu>
