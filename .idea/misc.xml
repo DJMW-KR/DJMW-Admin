@@ -3,8 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/apple/AndroidStudioProjects/DJMW-Admin/app/src/main/res/drawable/admin_category_frame.xml" value="0.29739583333333336" />
         <entry key="..\:/Users/apple/AndroidStudioProjects/DJMW-Admin/app/src/main/res/layout/activity_main.xml" value="0.28125" />
-        <entry key="..\:/Users/apple/AndroidStudioProjects/DJMW-Admin/app/src/main/res/layout/fragment_admin.xml" value="0.26666666666666666" />
+        <entry key="..\:/Users/apple/AndroidStudioProjects/DJMW-Admin/app/src/main/res/layout/fragment_admin.xml" value="0.4" />
         <entry key="..\:/Users/apple/AndroidStudioProjects/DJMW-Admin/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.28125" />
         <entry key="..\:/Users/apple/AndroidStudioProjects/DJMWAndroid/app/src/main/res/drawable/edit_text_frame.xml" value="0.2928205128205128" />
         <entry key="..\:/Users/apple/AndroidStudioProjects/DJMWAndroid/app/src/main/res/drawable/kakao_btn.xml" value="0.27037037037037037" />
