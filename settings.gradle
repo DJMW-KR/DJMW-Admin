@@ -11,5 +11,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "DJMW-Android"
+rootProject.name = "DJMW-Admin"
 include ':app'

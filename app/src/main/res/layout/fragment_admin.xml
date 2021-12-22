@@ -6,7 +6,7 @@
     <data>
         <variable
             name="fragment"
-            type="com.pss.djmw_android.view.main.AdminFragment" />
+            type="com.pss.djmw_admin.view.main.AdminFragment" />
     </data>
 
     <LinearLayout

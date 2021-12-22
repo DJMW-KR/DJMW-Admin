@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/rankingFragment"
-        android:name="com.pss.djmw_android.view.main.ranking.RankingFragment"
+        android:name="com.pss.djmw_admin.view.main.ranking.RankingFragment"
         tools:layout="@layout/fragment_ranking"
         android:label="RankingFragment" />
     <fragment
         android:id="@+id/questionFragment"
-        android:name="com.pss.djmw_android.view.main.question.QuestionFragment"
+        android:name="com.pss.djmw_admin.view.main.question.QuestionFragment"
         tools:layout="@layout/fragment_question"
         android:label="QuestionFragment" />
     <fragment
         android:id="@+id/postFragment"
-        android:name="com.pss.djmw_android.view.main.post.PostFragment"
+        android:name="com.pss.djmw_admin.view.main.post.PostFragment"
         tools:layout="@layout/fragment_post"
         android:label="PostFragment" >
         <action
@@ -30,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.pss.djmw_android.view.main.profile.ProfileFragment"
+        android:name="com.pss.djmw_admin.view.main.profile.ProfileFragment"
         tools:layout="@layout/fragment_profile"
         android:label="ProfileFragment" >
         <action
@@ -44,7 +44,7 @@
     <fragment
         android:id="@+id/setPostFragment"
         tools:layout="@layout/fragment_set_post"
-        android:name="com.pss.djmw_android.view.main.post.SetPostFragment"
+        android:name="com.pss.djmw_admin.view.main.post.SetPostFragment"
         android:label="SetPostFragment" >
         <action
             android:id="@+id/action_setPostFragment_to_postFragment"
@@ -53,11 +53,11 @@
     <fragment
         android:id="@+id/setInquireFragment"
         tools:layout="@layout/fragment_set_inquire"
-        android:name="com.pss.djmw_android.view.main.profile.SetInquireFragment"
+        android:name="com.pss.djmw_admin.view.main.profile.SetInquireFragment"
         android:label="SetInquireFragment" />
     <fragment
         android:id="@+id/adminFragment"
-        android:name="com.pss.djmw_android.view.main.AdminFragment"
+        android:name="com.pss.djmw_admin.view.main.AdminFragment"
         tools:layout="@layout/fragment_admin"
         android:label="AdminFragment" />
 

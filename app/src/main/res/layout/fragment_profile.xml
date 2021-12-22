@@ -5,7 +5,7 @@
     <data>
         <variable
             name="fragment"
-            type="com.pss.djmw_android.view.main.profile.ProfileFragment" />
+            type="com.pss.djmw_admin.view.main.profile.ProfileFragment" />
     </data>
 
     <RelativeLayout

@@ -6,7 +6,7 @@
     <data>
         <variable
             name="data"
-            type="com.pss.djmw_android.data.model.UserInfo" />
+            type="com.pss.djmw_admin.data.model.UserInfo" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

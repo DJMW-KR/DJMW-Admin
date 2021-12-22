@@ -6,7 +6,7 @@
     <data>
         <variable
             name="fragment"
-            type="com.pss.djmw_android.view.main.post.PostFragment" />
+            type="com.pss.djmw_admin.view.main.post.PostFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
