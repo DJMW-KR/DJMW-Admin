@@ -38,4 +38,8 @@ class AdminViewModel  @Inject constructor(
         .addOnFailureListener {
             _eventError.postValue(1)
         }
+
+    fun setServerInspection() = adminRepository.setServerInspection()
+
+    fun setVersionSave(version:String) = adminRepository.setVersionSave(version)
 }

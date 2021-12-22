@@ -13,4 +13,10 @@ class AdminRepository @Inject constructor(
 
     //사용자 정보 초기화 (관리자 권한)
     fun setCleanUserParticipationInfo() =  firebaseDatabase.reference.child("userParticipationInfo").setValue("null")
+
+    //서버 점검중 표시 (관리자 권한)
+    fun setServerInspection() =  firebaseDatabase.reference.child("version").setValue("0.0.0")
+
+    //서버 버전 변경 (관리자 권한)
+    fun setVersionSave(version : String) =  firebaseDatabase.reference.child("version").setValue(version)
 }

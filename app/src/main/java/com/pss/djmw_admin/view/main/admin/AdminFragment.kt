@@ -1,4 +1,4 @@
-package com.pss.djmw_admin.view.main
+package com.pss.djmw_admin.view.main.admin
 
 import android.view.View
 import androidx.fragment.app.activityViewModels

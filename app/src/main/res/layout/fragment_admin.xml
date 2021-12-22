@@ -6,7 +6,7 @@
     <data>
         <variable
             name="fragment"
-            type="com.pss.djmw_admin.view.main.AdminFragment" />
+            type="com.pss.djmw_admin.view.main.admin.AdminFragment" />
     </data>
 
     <LinearLayout
@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="20dp"
-        tools:context=".view.main.AdminFragment">
+        tools:context=".view.main.admin.AdminFragment">
 
 
         <TextView
