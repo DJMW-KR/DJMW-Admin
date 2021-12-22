@@ -11,5 +11,5 @@ data class UserParticipationInfo(
     //선택하기
     val answer : ParticipationItem
 ) : Parcelable {
-    constructor() : this(ParticipationItem(true,true,true,true,true), ParticipationItem(true,true,true,true,true))
+    constructor() : this(ParticipationItem(false,false,false,false,false), ParticipationItem(false,false,false,false,false))
 }

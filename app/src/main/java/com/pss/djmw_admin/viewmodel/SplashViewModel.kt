@@ -42,7 +42,19 @@ class SplashViewModel @Inject constructor(
             else _eventUserParticipationInfo.postValue(it.getValue(UserParticipationInfo::class.java))
         }
         .addOnFailureListener {
-            Log.d("로그","getuserinfo failure : $it")
+            //카카오 로그인을 다 한사람만 이 오류가 뜨기 때문에 여기서 초기화 후 접속인지 판별
+
             _eventError.postValue(0)
         }
+
+    fun setSettingUserParticipation(id : String){
+        val userParticipationInfo = UserParticipationInfo()
+        splashRepository.setSettingUserParticipation(id = id, item = userParticipationInfo)
+            .addOnSuccessListener {
+                Log.d("로그","성공")
+            }
+            .addOnFailureListener {
+                Log.d("로그","실패")
+            }
+    }
 }

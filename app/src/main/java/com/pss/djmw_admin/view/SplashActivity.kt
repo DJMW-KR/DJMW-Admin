@@ -146,7 +146,10 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(R.layout.activity_spl
 
         splashViewModel.eventError.observe(this,{
             when(it){
-                0 -> shortShowToast("사용자 참여통계 정보를 가져오는데 오류가 발생했습니다")
+                0 -> {
+                    splashViewModel.setSettingUserParticipation(mainViewModel.eventGetUserInfo.value!!.userId)
+                    longShowToast("새로운 질문들이 도착했습니다! 재접속해 주세요")
+                }
             }
         })
 
