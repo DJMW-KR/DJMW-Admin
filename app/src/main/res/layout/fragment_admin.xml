@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="fragment"
+            type="com.pss.djmw_android.view.main.AdminFragment" />
     </data>
 
     <LinearLayout
@@ -23,7 +25,32 @@
             android:fontFamily="@font/noto_sans_kr_bold"
             android:textSize="20sp"
             />
+        <EditText
+            android:id="@+id/password_edit_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black"
+            android:hint="관리자 암호를 입력하세요"
+            android:fontFamily="@font/noto_sans_kr_medium"
+            android:includeFontPadding="false"
+            android:textSize="15sp"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/admin_password_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="권한 활성화"
+            android:layout_marginTop="5dp"
+            android:onClick="@{fragment::clickAdminPasswordBtn}"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/noto_sans_kr_medium"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:background="@drawable/admin_category_frame"
+            />
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btn_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -41,12 +68,12 @@
                 android:textColor="@color/white"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/arrow"
+                app:layout_constraintEnd_toStartOf="@+id/arrow_1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/arrow"
+                android:id="@+id/arrow_1"
                 android:layout_width="@dimen/admin_page_arrow_size"
                 android:layout_height="@dimen/admin_page_arrow_size"
                 android:src="@drawable/arrow"
@@ -74,12 +101,12 @@
                 android:textColor="@color/white"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/arrow"
+                app:layout_constraintEnd_toStartOf="@+id/arrow_2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/arrow"
+                android:id="@+id/arrow_2"
                 android:layout_width="@dimen/admin_page_arrow_size"
                 android:layout_height="@dimen/admin_page_arrow_size"
                 android:src="@drawable/arrow"
@@ -107,12 +134,12 @@
                 android:textColor="@color/white"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/arrow"
+                app:layout_constraintEnd_toStartOf="@+id/arrow_3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/arrow"
+                android:id="@+id/arrow_3"
                 android:layout_width="@dimen/admin_page_arrow_size"
                 android:layout_height="@dimen/admin_page_arrow_size"
                 android:src="@drawable/arrow"
