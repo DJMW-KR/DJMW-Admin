@@ -14,6 +14,10 @@ class AdminViewModel  @Inject constructor(
     val eventAdminPasswordCheck: LiveData<Boolean> get() = _eventAdminPasswordCheck
     private val _eventAdminPasswordCheck = SingleLiveEvent<Boolean>()
 
+    val eventAdminAction: LiveData<Boolean> get() = _eventAdminAction
+    private val _eventAdminAction = SingleLiveEvent<Boolean>()
+
+    //0 = 인증번호 틀렸을때, 1 = 유저 통계 정보 전체 초기화 실패 시
     val eventError: LiveData<Int> get() = _eventError
     private val _eventError = SingleLiveEvent<Int>()
 
@@ -25,5 +29,13 @@ class AdminViewModel  @Inject constructor(
         }
         .addOnFailureListener {
             _eventError.postValue(0)
+        }
+
+    fun setCleanUserParticipationInfo() = adminRepository.setCleanUserParticipationInfo()
+        .addOnSuccessListener {
+            _eventAdminAction.call()
+        }
+        .addOnFailureListener {
+            _eventError.postValue(1)
         }
 }

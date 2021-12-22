@@ -10,4 +10,7 @@ class AdminRepository @Inject constructor(
 ) {
     //어드민 비밀번호 체크
     fun adminPasswordCheck(password : String) = firebaseDatabase.reference.child("admin").get()
+
+    //사용자 정보 초기화 (관리자 권한)
+    fun setCleanUserParticipationInfo() =  firebaseDatabase.reference.child("userParticipationInfo").setValue("null")
 }

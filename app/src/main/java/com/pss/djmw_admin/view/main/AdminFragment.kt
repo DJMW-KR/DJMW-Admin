@@ -17,22 +17,29 @@ class AdminFragment : BaseFragment<FragmentAdminBinding>(R.layout.fragment_admin
         observeViewModel()
     }
 
-    fun clickAdminPasswordBtn(view: View){
+    fun clickAdminPasswordBtn(view: View) {
         adminViewModel.adminPasswordCheck(binding.passwordEditTxt.text.toString())
     }
 
-    fun clickAdminBtnOne(view: View){
-
+    fun clickAdminBtnOne(view: View) {
+        if (checkAdminAuth()) adminViewModel.setCleanUserParticipationInfo()
     }
 
-    private fun observeViewModel(){
-        adminViewModel.eventAdminPasswordCheck.observe(this,{
+    private fun checkAdminAuth() = if (adminViewModel.eventAdminPasswordCheck.value == true) true
+    else {
+        shortShowToast("관리자 권한을 활성화 해 주세요")
+        false
+    }
+
+
+    private fun observeViewModel() {
+        adminViewModel.eventAdminPasswordCheck.observe(this, {
             if (it) shortShowToast("권환이 활성화 되었습니다")
             else shortShowToast("관리자 권한 번호가 다릅니다")
         })
 
         adminViewModel.eventError.observe(this, {
-            when(it){
+            when (it) {
                 0 -> shortShowToast("관리자 권환을 인증하는데 오류가 발생했습니다")
             }
         })
