@@ -30,4 +30,14 @@ class ServerVersionFragment :
         if (TextUtils.isEmpty(binding.versionEditTxt.text.toString())) shortShowToast("버전을 입력하세요")
         else adminViewModel.setVersionSave(binding.versionEditTxt.text.toString())
     }
+
+    private fun observeViewModel(){
+        adminViewModel.eventAdminAction.observe(this,{
+            shortShowToast("관리자 권한 실행이 성공했습니다")
+        })
+
+        adminViewModel.eventError.observe(this,{
+            shortShowToast("관리자 권한 실행이 실패했습니다")
+        })
+    }
 }

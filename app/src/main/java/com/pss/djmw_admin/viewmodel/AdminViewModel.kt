@@ -28,7 +28,7 @@ class AdminViewModel  @Inject constructor(
             else _eventAdminPasswordCheck.postValue(false)
         }
         .addOnFailureListener {
-            _eventError.postValue(0)
+            _eventError.call()
         }
 
     fun setCleanUserParticipationInfo() = adminRepository.setCleanUserParticipationInfo()
@@ -36,7 +36,7 @@ class AdminViewModel  @Inject constructor(
             _eventAdminAction.call()
         }
         .addOnFailureListener {
-            _eventError.postValue(1)
+            _eventError.call()
         }
 
     fun setServerInspection() = adminRepository.setServerInspection()
