@@ -51,7 +51,7 @@
             />
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/btn_1"
-            android:onClick="@{fragment::clickAdminBtnOne}"
+            android:onClick="@{fragment::clickAdminOneBtn}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -88,6 +88,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:onClick="@{fragment::clickAdminTwoBtn}"
             android:padding="20dp"
             android:background="@drawable/admin_category_frame"
             app:layout_constraintStart_toStartOf="parent"

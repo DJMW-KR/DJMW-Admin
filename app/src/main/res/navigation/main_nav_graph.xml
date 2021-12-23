@@ -59,6 +59,15 @@
         android:id="@+id/adminFragment"
         android:name="com.pss.djmw_admin.view.main.admin.AdminFragment"
         tools:layout="@layout/fragment_admin"
-        android:label="AdminFragment" />
+        android:label="AdminFragment" >
+        <action
+            android:id="@+id/action_adminFragment_to_serverVersionFragment"
+            app:destination="@id/serverVersionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/serverVersionFragment"
+        tools:layout="@layout/fragment_server_version"
+        android:name="com.pss.djmw_admin.view.main.admin.ServerVersionFragment"
+        android:label="ServerVersionFragment" />
 
 </navigation>

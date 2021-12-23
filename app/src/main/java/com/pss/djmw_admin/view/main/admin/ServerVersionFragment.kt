@@ -13,7 +13,8 @@ import com.pss.djmw_admin.databinding.FragmentServerVersionBinding
 import com.pss.djmw_admin.viewmodel.AdminViewModel
 
 
-class ServerVersionFragment : BaseFragment<FragmentServerVersionBinding>(R.layout.fragment_server_version) {
+class ServerVersionFragment :
+    BaseFragment<FragmentServerVersionBinding>(R.layout.fragment_server_version) {
     private val adminViewModel by activityViewModels<AdminViewModel>()
 
 
@@ -21,12 +22,12 @@ class ServerVersionFragment : BaseFragment<FragmentServerVersionBinding>(R.layou
         binding.fragment = this
     }
 
-    fun clickServerInspectionBtn(view: View){
+    fun clickServerInspectionBtn(view: View) {
         adminViewModel.setServerInspection()
     }
 
     fun clickVersionSaveBtn(view: View) {
-        if (TextUtils.isEmpty(binding.versionEditTxt.text.toString()))adminViewModel.setVersionSave(binding.versionEditTxt.text.toString())
-        else shortShowToast("버전을 입력하세요")
+        if (TextUtils.isEmpty(binding.versionEditTxt.text.toString())) shortShowToast("버전을 입력하세요")
+        else adminViewModel.setVersionSave(binding.versionEditTxt.text.toString())
     }
 }
