@@ -20,6 +20,7 @@ class ServerVersionFragment :
 
     override fun init() {
         binding.fragment = this
+        observeViewModel()
     }
 
     fun clickServerInspectionBtn(view: View) {
