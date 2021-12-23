@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.pss.djmw_admin.R
 import com.pss.djmw_admin.base.BaseFragment
 import com.pss.djmw_admin.databinding.FragmentServerVersionBinding
@@ -25,6 +26,10 @@ class ServerVersionFragment :
 
     fun clickServerInspectionBtn(view: View) {
         adminViewModel.setServerInspection()
+    }
+
+    fun clickBackBtn(view: View){
+        this.findNavController().popBackStack()
     }
 
     fun clickVersionSaveBtn(view: View) {

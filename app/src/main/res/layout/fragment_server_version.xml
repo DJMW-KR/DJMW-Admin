@@ -15,13 +15,21 @@
         android:padding="20dp"
         tools:context=".view.main.admin.ServerVersionFragment">
 
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="40dp"
+            android:padding="10dp"
+            android:onClick="@{fragment::clickBackBtn}"
+            android:layout_height="40dp"
+            android:src="@drawable/back"
+            />
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/server_inspection_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="점검으로 표시하기"
             android:onClick="@{fragment::clickServerInspectionBtn}"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="25dp"
             android:includeFontPadding="false"
             android:fontFamily="@font/noto_sans_kr_medium"
             android:textColor="@color/white"
