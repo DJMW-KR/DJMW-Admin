@@ -22,6 +22,7 @@ class AdminFragment : BaseFragment<FragmentAdminBinding>(R.layout.fragment_admin
 
     fun clickAdminPasswordBtn(view: View) {
         adminViewModel.adminPasswordCheck(binding.passwordEditTxt.text.toString())
+        binding.passwordEditTxt.setText("")
     }
 
     fun clickAdminOneBtn(view: View) {
