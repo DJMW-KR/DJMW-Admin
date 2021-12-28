@@ -1,4 +1,4 @@
-package com.pss.djmw_admin.view.main.question.adapter
+package com.pss.djmw_admin.view.main.question
 
 import android.os.Bundle
 import android.util.Log
@@ -11,6 +11,8 @@ import androidx.fragment.app.activityViewModels
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.pss.djmw_admin.R
 import com.pss.djmw_admin.databinding.FragmentOrderBottomDialogBinding
+import com.pss.djmw_admin.view.main.question.adapter.Sex
+import com.pss.djmw_admin.view.main.question.adapter.State
 import com.pss.djmw_admin.viewmodel.MainViewModel
 
 class OrderBottomDialogFragment(val itemClick: (Int) -> Unit, val state: State, val sex: Sex) :
@@ -228,6 +230,7 @@ class OrderBottomDialogFragment(val itemClick: (Int) -> Unit, val state: State, 
                   if (state == State.ANSWER)
                       else
               }*/
+        viewModel.eventGetUserInfo.value?.participationQuestion.plus(1)
         Toast.makeText(
             requireContext(),
             "성공적으로 반영되었습니다!",

@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.pss.djmw_admin.R
 import com.pss.djmw_admin.data.model.Question
 import com.pss.djmw_admin.databinding.QuestionRecyclerViewItemBinding
+import com.pss.djmw_admin.view.main.question.OrderBottomDialogFragment
 import com.pss.djmw_admin.viewmodel.MainViewModel
 import com.pss.djmw_admin.widget.extension.settingVisibility
 
@@ -39,7 +40,7 @@ class AnswerRecyclerViewAdapter(
     override fun onBindViewHolder(holder: AnswerRecyclerViewHolder, position: Int) {
         when (state) {
             State.ANSWER -> {
-                StateAnswer(holder, position)
+                stateAnswer(holder, position)
                 when (position) {
                     0 -> if (viewModel.eventUserParticipationInfo.value!!.question.q1) userParticipationTrue(holder)
                     1 ->  if (viewModel.eventUserParticipationInfo.value!!.question.q2) userParticipationTrue(holder)
@@ -49,7 +50,7 @@ class AnswerRecyclerViewAdapter(
                 }
             }
             State.ANSWERME -> {
-                StateAnswerMe(holder, position)
+                stateAnswerMe(holder, position)
                 when (position) {
                     0 -> if (viewModel.eventUserParticipationInfo.value!!.answer.q1) userParticipationTrue(holder)
                     1 ->  if (viewModel.eventUserParticipationInfo.value!!.answer.q2) userParticipationTrue(holder)
@@ -67,7 +68,7 @@ class AnswerRecyclerViewAdapter(
         holder.binding.participationStatusTrue.settingVisibility(true)
     }
 
-    private fun StateAnswer(holder: AnswerRecyclerViewHolder, position: Int) {
+    private fun stateAnswer(holder: AnswerRecyclerViewHolder, position: Int) {
         when (sex) {
             Sex.WOMAN -> holder.bind(viewModel.womanQuestionList[position])
             Sex.MAN -> holder.bind(viewModel.manQuestionList[position])
@@ -91,7 +92,7 @@ class AnswerRecyclerViewAdapter(
         }
     }
 
-    private fun StateAnswerMe(holder: AnswerRecyclerViewHolder, position: Int) {
+    private fun stateAnswerMe(holder: AnswerRecyclerViewHolder, position: Int) {
         when (sex) {
             Sex.WOMAN -> holder.bind(viewModel.manQuestionList[position])
             Sex.MAN -> holder.bind(viewModel.womanQuestionList[position])

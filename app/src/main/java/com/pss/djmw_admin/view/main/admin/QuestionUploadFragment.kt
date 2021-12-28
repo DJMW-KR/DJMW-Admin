@@ -13,6 +13,7 @@ import com.pss.djmw_admin.databinding.FragmentQuestionUploadBinding
 import com.pss.djmw_admin.view.main.question.adapter.Sex
 
 import com.pss.djmw_admin.viewmodel.AdminViewModel
+import com.pss.djmw_admin.viewmodel.MainViewModel
 
 
 class QuestionUploadFragment :
@@ -32,7 +33,8 @@ class QuestionUploadFragment :
     //woman_answer
 
     //4. 업로드 하기
-    private val viewModel by activityViewModels<AdminViewModel>()
+    private val adminViewModel by activityViewModels<AdminViewModel>()
+    private val mainViewModel by activityViewModels<MainViewModel>()
 
 
     override fun init() {
@@ -41,7 +43,7 @@ class QuestionUploadFragment :
     }
 
     private fun observeViewModel() {
-        viewModel.eventNumber.observe(this, {
+        adminViewModel.eventNumber.observe(this, {
             Log.d("로그","가져온 질문 number : $it")
             val manQuestion = Question(
                 binding.manAnswerOne.text.toString(),
@@ -61,12 +63,11 @@ class QuestionUploadFragment :
                 binding.questionTitle.text.toString(),
                 it
             )
-            viewModel.setQuestion(binding.questionTitle.text.toString(), manQuestion, Sex.MAN)
-            viewModel.setQuestion(binding.questionTitle.text.toString(), womanQuestion, Sex.WOMAN)
+            adminViewModel.setQuestion(binding.questionTitle.text.toString(), manQuestion, womanQuestion)
             cleanTxt()
         })
 
-        viewModel.eventError.observe(this, {
+        adminViewModel.eventError.observe(this, {
             when (it) {
                 2 -> shortShowToast("number 가져오기에 실패했습니다")
             }
@@ -87,18 +88,19 @@ class QuestionUploadFragment :
     }
 
     fun clickQuestionDelete(view: View) {
-        viewModel.questionDelete()
+        adminViewModel.questionDelete()
     }
 
     fun clickQuestionStatisticsDelete(view: View) {
-        viewModel.questionStatisticsDelete()
+        adminViewModel.questionStatisticsDelete()
     }
 
     fun clickBackBtn(view: View) {
+        mainViewModel.setActionView(true)
         this.findNavController().popBackStack()
     }
 
     fun clickQuestionUploadBtn(view: View) {
-        viewModel.getNumber()
+        adminViewModel.getNumber()
     }
 }

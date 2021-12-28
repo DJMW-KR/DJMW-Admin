@@ -52,7 +52,7 @@ class AdminViewModel  @Inject constructor(
 
     fun questionStatisticsDelete() = adminRepository.questionStatisticsDelete()
 
-    fun setQuestion(title: String, content: Question, sex: Sex) = adminRepository.setQuestion(title, content, sex)
+    fun setQuestion(title: String,  manContent: Question, womanContent : Question) = adminRepository.setQuestion(title, manContent, womanContent)
 
     fun getNumber() = adminRepository.getNumber()
         .addOnSuccessListener {

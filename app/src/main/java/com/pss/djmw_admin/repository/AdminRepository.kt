@@ -1,15 +1,11 @@
 package com.pss.djmw_admin.repository
 
-import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.QuerySnapshot
 import javax.inject.Inject
-import com.google.firebase.firestore.QueryDocumentSnapshot
 
-import androidx.annotation.NonNull
 import com.pss.djmw_admin.data.model.Question
-import com.pss.djmw_admin.data.model.SetQuestion
+import com.pss.djmw_admin.data.model.SetAnswerStatistics
 import com.pss.djmw_admin.view.main.question.adapter.Sex
 
 
@@ -59,16 +55,16 @@ class AdminRepository @Inject constructor(
     }
 
     //질문 등록
-    fun setQuestion(title: String, content: Question, sex: Sex) {
-        if (sex == Sex.MAN) firestore.collection("man_question").document(title).set(content)
-        else firestore.collection("woman_question").document(title).set(content)
+    fun setQuestion(title: String, manContent: Question, womanContent : Question) {
+        firestore.collection("man_question").document(title).set(manContent)
+        firestore.collection("woman_question").document(title).set(womanContent)
         setStatistics("man_answer",title)
         setStatistics("woman_answer",title)
         setStatistics("man_question",title)
         setStatistics("woman_question",title)
     }
 
-    private fun setStatistics(child: String, title: String) = firebaseDatabase.reference.child(child).child(title).setValue(SetQuestion())
+    private fun setStatistics(child: String, title: String) = firebaseDatabase.reference.child(child).child(title).setValue(SetAnswerStatistics())
 
     //number 를 알기위해 게시물 개수 가져오기
     fun getNumber() = firestore.collection("man_question").get()
