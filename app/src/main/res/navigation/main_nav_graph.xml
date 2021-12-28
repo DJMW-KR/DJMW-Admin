@@ -63,11 +63,19 @@
         <action
             android:id="@+id/action_adminFragment_to_serverVersionFragment"
             app:destination="@id/serverVersionFragment" />
+        <action
+            android:id="@+id/action_adminFragment_to_questionUploadFragment"
+            app:destination="@id/questionUploadFragment" />
     </fragment>
     <fragment
         android:id="@+id/serverVersionFragment"
         tools:layout="@layout/fragment_server_version"
         android:name="com.pss.djmw_admin.view.main.admin.ServerVersionFragment"
         android:label="ServerVersionFragment" />
+    <fragment
+        android:id="@+id/questionUploadFragment"
+        tools:layout="@layout/fragment_question_upload"
+        android:name="com.pss.djmw_admin.view.main.admin.QuestionUploadFragment"
+        android:label="QuestionUploadFragment" />
 
 </navigation>

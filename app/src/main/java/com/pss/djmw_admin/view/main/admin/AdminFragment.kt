@@ -36,6 +36,13 @@ class AdminFragment : BaseFragment<FragmentAdminBinding>(R.layout.fragment_admin
         }
     }
 
+    fun clickAdminThreeBtn(view: View) {
+        if (checkAdminAuth()) {
+            mainViewModel.setActionView(false)
+            this.findNavController().navigate(R.id.action_adminFragment_to_questionUploadFragment)
+        }
+    }
+
     private fun checkAdminAuth() = if (adminViewModel.eventAdminPasswordCheck.value == true) true
     else {
         shortShowToast("관리자 권한을 활성화 해 주세요")

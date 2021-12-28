@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="fragment"
+            type="com.pss.djmw_admin.view.main.admin.QuestionUploadFragment" />
     </data>
 
     <androidx.core.widget.NestedScrollView
@@ -16,11 +18,41 @@
             android:layout_height="match_parent"
             android:padding="10dp"
             android:orientation="vertical">
+
+
             <ImageView
+                android:onClick="@{fragment::clickBackBtn}"
+                android:id="@+id/back_btn"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:padding="10dp"
                 android:src="@drawable/back"
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/reset_firestore_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:onClick="@{fragment::clickQuestionDelete}"
+                android:background="@drawable/admin_category_frame"
+                android:textColor="@color/white"
+                android:text="질문 모두 초기화"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:textSize="17sp"
+                android:includeFontPadding="false"
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/reset_rtdb_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:onClick="@{fragment::clickQuestionStatisticsDelete}"
+                android:background="@drawable/admin_category_frame"
+                android:textColor="@color/white"
+                android:text="질문 스코어 초기화"
+                android:fontFamily="@font/noto_sans_kr_bold"
+                android:textSize="17sp"
+                android:includeFontPadding="false"
                 />
             <TextView
                 android:layout_width="match_parent"
@@ -33,6 +65,7 @@
                 android:textSize="20sp"
                 />
             <EditText
+                android:id="@+id/question_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -51,6 +84,7 @@
                 android:textSize="20sp"
                 />
             <EditText
+                android:id="@+id/man_answer_one"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -69,6 +103,7 @@
                 android:textSize="20sp"
                 />
             <EditText
+                android:id="@+id/man_answer_two"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -87,6 +122,7 @@
                 android:textSize="20sp"
                 />
             <EditText
+                android:id="@+id/man_answer_three"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -105,6 +141,7 @@
                 android:textSize="20sp"
                 />
             <EditText
+                android:id="@+id/man_answer_four"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -123,6 +160,7 @@
                 android:textSize="20sp"
                 />
             <EditText
+                android:id="@+id/man_answer_five"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -141,6 +179,7 @@
                 android:textSize="20sp"
                 />
             <EditText
+                android:id="@+id/woman_answer_one"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -159,6 +198,7 @@
                 android:textSize="20sp"
                 />
             <EditText
+                android:id="@+id/woman_answer_two"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -177,6 +217,7 @@
                 android:textSize="20sp"
                 />
             <EditText
+                android:id="@+id/woman_answer_three"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -195,6 +236,7 @@
                 android:textSize="20sp"
                 />
             <EditText
+                android:id="@+id/woman_answer_four"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -213,6 +255,7 @@
                 android:textSize="20sp"
                 />
             <EditText
+                android:id="@+id/woman_answer_five"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -220,13 +263,17 @@
                 android:textSize="15sp"
                 />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/upload_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/main_color"
+                android:onClick="@{fragment::clickQuestionUploadBtn}"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/admin_category_frame"
+                android:textColor="@color/white"
                 android:text="질문 만들기"
                 android:fontFamily="@font/noto_sans_kr_bold"
-                android:textSize="20sp"
+                android:textSize="17sp"
                 android:includeFontPadding="false"
                 />
         </LinearLayout>
